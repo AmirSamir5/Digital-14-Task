@@ -21,8 +21,27 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Digital 14',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+            primarySwatch: Colors.blue,
+            textTheme: const TextTheme(
+                bodyText1: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'HelveticaNeue',
+                  color: Colors.white,
+                ),
+                headline1: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: 'Avenir',
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(3.0, 3.0),
+                      blurRadius: 8.0,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    )
+                  ],
+                ))),
         home: const EventsScreen(),
       ),
     );

@@ -23,3 +23,7 @@ abstract class EndPointsURLs {
         "&q=$query";
   }
 }
+
+abstract class SharedPreferencesKeys {
+  static const FAVORITES_LIST_KEY = 'favorite_list_key';
+}
