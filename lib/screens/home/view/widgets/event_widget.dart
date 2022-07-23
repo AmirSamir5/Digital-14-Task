@@ -1,4 +1,5 @@
 import 'package:digital_14_task/screens/home/model/event_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class EventWidget extends StatefulWidget {
@@ -57,7 +58,7 @@ class _EventWidgetState extends State<EventWidget> {
                             child: widget.event.title != null
                                 ? Text(
                                     widget.event.title ?? "",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 13,
                                       fontWeight: FontWeight.normal,
                                       fontFamily: 'HelveticaNeue',
@@ -78,7 +79,7 @@ class _EventWidgetState extends State<EventWidget> {
                   width: (MediaQuery.of(context).size.width) / 3,
                   height: (2 * height) / 3,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     boxShadow: [
@@ -91,21 +92,31 @@ class _EventWidgetState extends State<EventWidget> {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
-                    child: Container(
+                    child: SizedBox(
                       height: (2 * height) / 3,
                       child: (widget.event.url == null)
                           ? Container(
                               color: Colors.black,
-                              padding: EdgeInsets.all(32),
+                              padding: const EdgeInsets.all(32),
                               child: Image.asset(
-                                  'assets/Images/zabatnee_logo.png'),
+                                'assets/images/seat-geek.png',
+                                fit: BoxFit.contain,
+                              ),
                             )
-                          : Image.network(
-                              widget.event.url ?? "",
-                              fit: BoxFit.cover,
+                          : CachedNetworkImage(
+                              imageUrl: widget.event.url!,
+                              placeholder: (context, url) => const Center(
+                                child: SizedBox(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
+                              errorWidget: (context, url, error) => Image.asset(
+                                'assets/images/seat-geek.png',
+                                fit: BoxFit.fill,
+                              ),
                             ),
                     ),
                   ),

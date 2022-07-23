@@ -3,12 +3,16 @@ import 'package:equatable/equatable.dart';
 
 class EventsEvent extends Equatable {
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class GetEventsEvent extends EventsEvent {
+class GetEventsByQuery extends EventsEvent {
+  final String query;
+
+  GetEventsByQuery(this.query);
+
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [query];
 }
 
 class GetEventsByIdEvent extends EventsEvent {

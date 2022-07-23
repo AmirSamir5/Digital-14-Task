@@ -1,4 +1,6 @@
-class Event {
+import 'package:equatable/equatable.dart';
+
+class Event extends Equatable {
   int? id;
   String? type;
   String? datetimeUtc;
@@ -17,6 +19,14 @@ class Event {
       this.title,
       this.announceDate,
       this.createdAt});
+
+  @override
+  List<Object?> get props => [
+        id,
+        shortTitle,
+        url,
+        title,
+      ];
 
   Event.fromJson(Map<String, dynamic> json) {
     type = json['type'];

@@ -10,14 +10,14 @@ class Eventsbloc extends Bloc<EventsEvent, EventsState> {
   EventRepository eventRepository = EventRepository();
 
   Eventsbloc(this.eventRepository) : super(EventsIsNotLoaded()) {
-    on<GetEventsEvent>(_getEvents);
+    on<GetEventsByQuery>(_getEvents);
   }
 
-  void _getEvents(EventsEvent event, Emitter<EventsState> emit) async {
+  void _getEvents(GetEventsByQuery event, Emitter<EventsState> emit) async {
     emit(EventsIsLoading());
 
     try {
-      List<Event> _events = await (eventRepository.getEvents());
+      List<Event> _events = await (eventRepository.getEvents(event.query));
       emit(EventsLoadedSuccessfully(_events));
     } catch (e) {
       if (e is PlatformException) {

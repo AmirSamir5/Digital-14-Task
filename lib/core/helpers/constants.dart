@@ -15,4 +15,11 @@ abstract class EndPointsURLs {
   static String getEventById(String eventId) {
     return ApiBaseUrl.BASE_URL + "events/$eventId" + ApiBaseUrl.CLIENT_HASH;
   }
+
+  static String getEventsByQuery(String query) {
+    return ApiBaseUrl.BASE_URL +
+        "events/" +
+        ApiBaseUrl.CLIENT_HASH +
+        "&q=$query";
+  }
 }

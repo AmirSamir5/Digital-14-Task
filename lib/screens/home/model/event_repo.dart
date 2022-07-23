@@ -5,10 +5,10 @@ import 'package:digital_14_task/screens/home/model/event_model.dart';
 class EventRepository {
   Event? event;
 
-  Future<dynamic> getEvents() async {
+  Future<dynamic> getEvents(String query) async {
     try {
       BaseRequest baseRequest = BaseRequest(
-        url: EndPointsURLs.GET_EVENTS,
+        url: EndPointsURLs.getEventsByQuery(query),
         requestType: NETWORK_REQUEST_TYPE.GET,
       );
 
