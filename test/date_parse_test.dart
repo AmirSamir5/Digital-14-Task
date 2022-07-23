@@ -1,8 +1,5 @@
 import 'package:digital_14_task/core/helpers/date_parser.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:digital_14_task/main.dart';
 
 void main() {
   group('Date Formatter', () {
