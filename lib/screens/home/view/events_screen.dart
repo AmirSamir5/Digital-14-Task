@@ -57,7 +57,8 @@ class _EventsScreenState extends State<EventsScreen> {
                   ),
                   title: TextField(
                     controller: _searchTextEditingController,
-                    onChanged: (value) {
+                    textInputAction: TextInputAction.search,
+                    onSubmitted: (value) {
                       eventsbloc = BlocProvider.of<Eventsbloc>(context);
                       eventsbloc!.add(GetEventsByQuery(value));
                     },
@@ -79,10 +80,16 @@ class _EventsScreenState extends State<EventsScreen> {
               builder: (context, state) {
                 if (state is EventsLoadedSuccessfully) {
                   return state.events.isEmpty
-                      ? const Center(child: Text('No Result Found'))
+                      ? Center(
+                          child: Text(
+                          'No Result Found',
+                          style: Theme.of(context).textTheme.headline1,
+                        ))
                       : ListView.builder(
                           physics: const BouncingScrollPhysics(),
                           shrinkWrap: true,
+                          addAutomaticKeepAlives: true,
+                          cacheExtent: 1000,
                           itemCount: state.events.length,
                           itemBuilder: ((context, index) {
                             return EventWidget(event: state.events[index]);

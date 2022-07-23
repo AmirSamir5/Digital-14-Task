@@ -18,6 +18,7 @@ class EventWidget extends StatefulWidget {
 
 class _EventWidgetState extends State<EventWidget> {
   List<int>? favoritesList;
+  bool isFavorite = false;
 
   @override
   void didChangeDependencies() {
@@ -32,16 +33,22 @@ class _EventWidgetState extends State<EventWidget> {
           prefs.getString(SharedPreferencesKeys.FAVORITES_LIST_KEY);
       if (favoritesResult != null) {
         favoritesList = List<int>.from(json.decode(favoritesResult));
+        itemIsFavorite();
       }
     }
   }
 
-  bool itemIsFavorite() {
+  itemIsFavorite() {
     var indexExists = favoritesList!.contains(widget.event.id);
     if (indexExists) {
-      return true;
+      setState(() {
+        isFavorite = true;
+      });
+      return;
     }
-    return false;
+    setState(() {
+      isFavorite = false;
+    });
   }
 
   @override
@@ -151,7 +158,7 @@ class _EventWidgetState extends State<EventWidget> {
                                     top: 8,
                                     left: 8,
                                     child: Icon(
-                                      itemIsFavorite() ? Icons.favorite : null,
+                                      isFavorite ? Icons.favorite : null,
                                       color: Colors.red,
                                     ),
                                   )
