@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:digital_14_task/screens/home/bloc/events_event.dart';
-import 'package:digital_14_task/screens/home/bloc/events_state.dart';
-import 'package:digital_14_task/screens/home/model/event_repo.dart';
+import 'package:digital_14_task/screens/events/bloc/events_event.dart';
+import 'package:digital_14_task/screens/events/bloc/events_state.dart';
+import 'package:digital_14_task/screens/events/model/event_repo.dart';
 import 'package:flutter/services.dart';
 
 import '../model/event_model.dart';

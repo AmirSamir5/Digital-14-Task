@@ -1,4 +1,4 @@
-import 'package:digital_14_task/screens/home/model/event_model.dart';
+import 'package:digital_14_task/screens/events/model/event_model.dart';
 import 'package:equatable/equatable.dart';
 
 class EventsState extends Equatable {

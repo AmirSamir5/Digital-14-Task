@@ -1,6 +1,6 @@
-import 'package:digital_14_task/screens/home/bloc/events_bloc.dart';
-import 'package:digital_14_task/screens/home/model/event_repo.dart';
-import 'package:digital_14_task/screens/home/view/events_screen.dart';
+import 'package:digital_14_task/screens/events/bloc/events_bloc.dart';
+import 'package:digital_14_task/screens/events/model/event_repo.dart';
+import 'package:digital_14_task/screens/events/view/events_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

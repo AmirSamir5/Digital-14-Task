@@ -1,9 +1,9 @@
 import 'package:digital_14_task/core/helpers/app_colors.dart';
-import 'package:digital_14_task/screens/home/bloc/events_bloc.dart';
-import 'package:digital_14_task/screens/home/bloc/events_event.dart';
-import 'package:digital_14_task/screens/home/bloc/events_state.dart';
-import 'package:digital_14_task/screens/home/view/event_details_screen.dart';
-import 'package:digital_14_task/screens/home/view/widgets/event_widget.dart';
+import 'package:digital_14_task/screens/events/bloc/events_bloc.dart';
+import 'package:digital_14_task/screens/events/bloc/events_event.dart';
+import 'package:digital_14_task/screens/events/bloc/events_state.dart';
+import 'package:digital_14_task/screens/events/view/event_details_screen.dart';
+import 'package:digital_14_task/screens/events/view/widgets/event_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

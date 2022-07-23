@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:digital_14_task/core/helpers/date_parser.dart';
 import 'package:digital_14_task/core/ui/custom_image.dart';
-import 'package:digital_14_task/screens/home/model/event_model.dart';
+import 'package:digital_14_task/screens/events/model/event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:digital_14_task/core/helpers/constants.dart';

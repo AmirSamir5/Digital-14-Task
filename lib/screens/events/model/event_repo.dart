@@ -1,6 +1,6 @@
 import 'package:digital_14_task/core/helpers/constants.dart';
 import 'package:digital_14_task/core/network/base_request.dart';
-import 'package:digital_14_task/screens/home/model/event_model.dart';
+import 'package:digital_14_task/screens/events/model/event_model.dart';
 
 class EventRepository {
   Event? event;
