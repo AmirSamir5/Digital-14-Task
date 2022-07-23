@@ -84,7 +84,7 @@ class _EventDetailsScreenState extends State<EventDetailsScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: Text('Event Details'),
+        title: const Text('Event Details'),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.black,
